@@ -7,14 +7,14 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>React Avançado - Boilerplate</title>
+        <title>My Trips</title>
         <link rel="shortcut icon" href="/img/icon-512.png" />
         <link rel="apple-touch-icon" href="/img/icon-523.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#06092B" />
         <meta
           name="description"
-          content="Boilerplate to work with Typescript, React, NextJS and Styled Components"
+          content="A simple project to show my fovorite spots in the world."
         />
       </Head>
       <Component {...pageProps} />
