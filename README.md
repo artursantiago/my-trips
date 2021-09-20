@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <a href="my-trips-artursantiago.vercel.app/">Live</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="my-trips-artursantiago.vercel.app/" target="_blank">Live</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-techs">Techs</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-installation">Installation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -42,7 +42,9 @@ This project was developed with the following technologies:
 
 You need to install YARN/NPM and NODE first, then in order to clone the project via SSH, run this command:
 
+```bash
 git clone git@github.com:artursantiago/my-trips.git
+```
 
 Install dependencies
 
@@ -54,7 +56,7 @@ npm install
 yarn
 ```
 
-## 🏃‍♂️ Getting Started
+##  🏃‍♂️ Getting Started
 
 First, run the development server:
 
