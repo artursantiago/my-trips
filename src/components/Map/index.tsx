@@ -1,41 +1,53 @@
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import CustomTileLayer from 'components/CustomTileLayer'
+import { useRouter } from 'next/dist/client/router'
+import { MapContainer, Marker } from 'react-leaflet'
 
 type Place = {
   id: string
   name: string
   slug: string
   location: {
-    latidute: number
+    latitude: number
     longitude: number
   }
 }
 
-type MapProps = {
+export type MapProps = {
   places?: Place[]
 }
 
-const Map = ({ places }: MapProps) => (
-  <MapContainer
-    center={[0, 0]}
-    zoom={3}
-    style={{ height: '100%', width: '100%' }}
-  >
-    <TileLayer
-      attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-    />
-    {places?.map(({ id, name, location }) => {
-      const { latidute, longitude } = location
+const Map = ({ places }: MapProps) => {
+  const router = useRouter()
 
-      return (
-        <Marker
-          key={`place-${id}`}
-          position={[latidute, longitude]}
-          title={name}
-        />
-      )
-    })}
-  </MapContainer>
-)
+  function handleMarkerClick(slug: string) {
+    router.push(`places/${slug}`)
+  }
+
+  return (
+    <MapContainer
+      center={[0, 0]}
+      zoom={3}
+      style={{ height: '100%', width: '100%' }}
+    >
+      <CustomTileLayer />
+      {places?.map(({ id, name, location, slug }) => {
+        const { latitude, longitude } = location
+
+        return (
+          <Marker
+            key={`place-${id}`}
+            title={name}
+            position={[latitude, longitude]}
+            eventHandlers={{
+              click: () => {
+                handleMarkerClick(slug)
+              }
+            }}
+          />
+        )
+      })}
+    </MapContainer>
+  )
+}
 
 export default Map

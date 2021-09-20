@@ -9,12 +9,13 @@ export const Container = styled.div`
   cursor: pointer;
 
   svg {
-    transition: color 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 
   &:hover {
     svg {
       color: var(--highlight);
+      filter: saturate(0.6);
     }
   }
 `
